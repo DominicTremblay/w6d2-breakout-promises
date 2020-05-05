@@ -1,45 +1,17 @@
 const { usersDb, todosDb } = require('./todosDb');
 
-
+// Getting the list of users from the db
 const getUsers = () => {
-  return new Promise((resolve, reject) => {
-    const error = null;
-
-    setTimeout(() => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(Object.values(usersDb));
-      }
-    }, 1000);
-  });
 };
 
 
+// Get the list of todos from the db
 const getTodos = () => {
-  return new Promise((resolve, reject) => {
-    const error = null;
-
-    setTimeout(() => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(Object.values(todosDb));
-      }
-    }, 1000);
-  });
 };
 
+
+// Getting all the users and all the todos from the database
 const getUserTodos = () => {
-  return Promise
-    .all([getUsers(), getTodos()])
-    .then(results => {
-
-      console.log(results[0]);
-      console.log(results[1]);
-
-    })
-    .catch(err => console.log(err));
 
 };
 
